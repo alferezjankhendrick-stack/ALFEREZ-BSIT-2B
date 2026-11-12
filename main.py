@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 
-LAST_NAME = "Alferez"   # <-- CHANGE THIS to your last name
+LAST_NAME = "Alferez"  
 
 
 
@@ -23,7 +23,7 @@ def build_tree(name):
         cur = root
         while True:
             if ch == cur.key:
-                break  # duplicate letter, skip
+                break  
             side = "left" if ch < cur.key else "right"
             nxt = getattr(cur, side)
             if nxt is None:
@@ -57,7 +57,7 @@ def tree_bfs(root):
 
 
 
-def preorder(node, out):    # Root, Left, Right
+def preorder(node, out):    
     if node:
         out.append(node.key)
         preorder(node.left, out)
@@ -65,7 +65,7 @@ def preorder(node, out):    # Root, Left, Right
     return out
 
 
-def inorder(node, out):     # Left, Root, Right
+def inorder(node, out):     
     if node:
         inorder(node.left, out)
         out.append(node.key)
@@ -73,7 +73,7 @@ def inorder(node, out):     # Left, Root, Right
     return out
 
 
-def postorder(node, out):   # Left, Right, Root
+def postorder(node, out):   
     if node:
         postorder(node.left, out)
         postorder(node.right, out)
